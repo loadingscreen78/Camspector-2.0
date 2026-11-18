@@ -1,5 +1,10 @@
 # Running the GPU benchmark on another laptop
 
+> **If this laptop has a coding agent** (Claude Code, Cursor, Codex…): open this folder in it
+> and say **"Do the task in AGENT_TASK.md"**. The agent runs everything below, plus the
+> feature-parity test, which downloads about 0.5 GB of video and a features archive. The
+> manual steps below cover only the benchmark.
+
 Thanks for helping. This takes about 20–40 minutes, mostly the PyTorch download, and
 nothing is installed system-wide. Everything goes into a `.venv` folder inside this project folder.
 

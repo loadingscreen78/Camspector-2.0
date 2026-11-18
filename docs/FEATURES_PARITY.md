@@ -28,9 +28,10 @@ prove equivalence empirically.
 
 ## Proposed feature parity test
 
-1. Download 2 EPIC-100 videos (needs your approval), chosen to cover both kinds of source:
-   one EPIC-55 video (e.g. `P01_11`) and one EPIC-100 extension video (e.g. `P01_101`).
-   Each is roughly 0.1–1.5 GB.
+1. Download 2 EPIC-100 validation videos **on the teammate machine** (approved; the main laptop
+   has no space): `P28_18` (120 s, 59.94 fps) and `P09_08` (126 s, 29.97 fps), both 1080p.
+   Two frame rates exercise the resampling to 30 fps. About 0.5 GB in total *(est.)*. Script:
+   `code/scripts/parity/download_parity_data.py`; instructions: `AGENT_TASK.md`.
 2. Implement `features/slowfast_epic.py`: load `SlowFast.pyth` (PySlowFast key names mapped to
    a pytorchvideo `create_slowfast` R50 8x8, or vendored PySlowFast model code), decode with
    our `video_io`, resample to 30 fps by timestamp, clip 32 frames with stride 16, slow
